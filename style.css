@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* low specificity styles */
+body {
+  background-color: aliceblue;
+  display: flex;
+  margin-top: 50px;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: hsl(0, 0%, 100%);
+  max-width: 70vw;
+  padding: 1rem 1.5rem;
+}
+
+form {
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  margin-bottom: 0.5rem;
+}
+
+label,
+legend {
+  font-size: 0.8rem;
+  color: hsl(187, 24%, 22%);
+}
+
+/* focus styles */
+textarea,
+input[type="text"]:focus,
+input[type="email"]:focus {
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border: 2px solid hsl(169, 82%, 27%);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: hsl(169, 82%, 27%);
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+}
+
+/* main content styles */
+.title {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  gap: 0.3rem;
+}
+
+/* grouped styles */
+.row--one,
+.row__radio,
+.row--five {
+  flex-direction: row;
+  gap: 1rem;
+}
+
+input,
+.radio,
+.submit-button,
+textarea {
+  border-radius: 4px;
+  padding: 0.5rem;
+  border: 1px solid hsl(186, 15%, 59%);
+}
+
+/* row one styles */
+.row--one input {
+  margin-top: 0.5rem;
+  display: block;
+  width: 100%;
+}
+
+.row--first-name,
+.row--last-name {
+  width: 50%;
+}
+
+/* row five styles */
+.row--five label {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* submit button styles */
+.submit-button {
+  margin-top: 1rem;
+  border: none;
+  background-color: hsl(169, 82%, 27%);
+  color: hsl(0, 0%, 100%);
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: hsl(169, 82%, 18%);
+}
+
+/* radio button styles */
+.row__radio {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.radi.clicked {
+  background-color: hsl(148, 38%, 91%);
+}
+
+.radio {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.5rem;
+  padding-left: 1rem;
+  width: 100%;
+}
+
+.radio__btn {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* invalid styles */
+
+span {
+  color: hsl(0, 66%, 54%);
+  font-size: 0.9rem;
+}
