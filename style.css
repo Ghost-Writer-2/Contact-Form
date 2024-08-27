@@ -1,14 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-/* low specificity styles */
+/**************** general styles **************************/
 body {
   background-color: aliceblue;
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   flex-direction: column;
   align-items: center;
   max-height: 100vh;
@@ -18,11 +23,22 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/***************************** card styles **************************/
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   border-radius: 6px;
+  padding: 1rem 1.5rem;
+}
+
+.main--card {
   background-color: hsl(0, 0%, 100%);
   max-width: 70vw;
-  padding: 1rem 1.5rem;
+  padding-bottom: 0;
 }
 
 form {
@@ -48,7 +64,7 @@ legend {
   color: hsl(187, 24%, 22%);
 }
 
-/* focus styles */
+/************************ focus styles ***********************/
 textarea,
 input[type="text"]:focus,
 input[type="email"]:focus {
@@ -70,7 +86,7 @@ input[type="checkbox"] {
   width: 18px;
 }
 
-/* main content styles */
+/********************* main content styles **************************/
 .title {
   margin-bottom: 20px;
   font-weight: 600;
@@ -83,7 +99,7 @@ input[type="checkbox"] {
   gap: 0.3rem;
 }
 
-/* grouped styles */
+/******************************* grouped styles ***********************/
 .row--one,
 .row__radio,
 .row--five {
@@ -100,7 +116,7 @@ textarea {
   border: 1px solid hsl(186, 15%, 59%);
 }
 
-/* row one styles */
+/****************** row one styles ********************************/
 .row--one input {
   margin-top: 0.5rem;
   display: block;
@@ -112,15 +128,24 @@ textarea {
   width: 50%;
 }
 
-/* row five styles */
+/***************************** row--five styles ***********************/
 .row--five label {
-  text-align: center;
   font-size: 0.9rem;
 }
 
-/* submit button styles */
+.row--five {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  row-gap: 0.5rem;
+}
+
+.row__consent {
+  cursor: pointer;
+}
+
+/******************* submit button styles *********************/
 .submit-button {
-  margin-top: 1rem;
   border: none;
   background-color: hsl(169, 82%, 27%);
   color: hsl(0, 0%, 100%);
@@ -133,10 +158,10 @@ textarea {
   background-color: hsl(169, 82%, 18%);
 }
 
-/* radio button styles */
+/*************************** radio button styles *********************/
 .row__radio {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 0.2rem;
 }
 
 .radi.clicked {
@@ -145,7 +170,7 @@ textarea {
 
 .radio {
   font-size: 0.9rem;
-  padding: 0.4rem 0.5rem;
+  padding: 0.8rem 0.5rem;
   padding-left: 1rem;
   width: 100%;
 }
@@ -153,11 +178,74 @@ textarea {
 .radio__btn {
   display: flex;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
-/* invalid styles */
+/* .green-color {
+  background-color: ;
+} */
+
+/***************************** invalid styles **************************/
 
 span {
   color: hsl(0, 66%, 54%);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
+
+/*************************** hide elements ****************/
+.hide {
+ display: none;
+  height: 0;
+}
+
+/********************** success styles ***************************/
+.success--card {
+  position: absolute;
+  background-color: hsl(187, 24%, 22%);
+  align-items: start;
+  gap: 0.5rem;
+  width: auto;
+}
+
+.success--indicator {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 0.5rem;
+}
+
+.success__check {
+  width: 16px;
+}
+
+.indicator__msg,
+.success__msg {
+  color: white;
+}
+
+.indicator__msg {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.success__msg {
+  font-size: 0.7rem;
+}
+
+/*********************** success animation ****************************/
+@keyframes successful {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateY(-10px);
+  }
+}
+
+.success {
+  transform: translateY(-10px);
+  animation: successful 1s ease 1;
+  transition: display 1s, animation 1s;
+}
+

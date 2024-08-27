@@ -17,62 +17,116 @@
 </head>
 <body>
   <main>
-    <form class="form" action="#">
-      <h3 class="title">Contact Us</h3>
-      <div class="row row--one">
-        <div class="row--first-name">
-          <label class="first" for="first-name">First Name *</label>
-          <input class="test" type="text" name="fname" class="fname" id="first-name">
-          <span>Hello</span>
-        </div>
-        <div class="row--last-name">
-          <label for="first-name">Last Name *</label>
-          <input type="text" name="lname" class="lname" id="last-name">
-          <span>Hello</span>
-        </div>
+    <section class="success card success--card">
+      <div class="success--indicator">
+        <img class="success__check" src="assets/images/icon-success-check.svg" alt="success_check">
+        <p class="indicator__msg">Message Sent!</p>
       </div>
-  
-      <div class="row row--two">
-        <label for="email">Email Address *</label>
-        <input type="email" name="mail" id="email">
+      <div class="sucess--msg">
+        <p class="success__msg">Thanks for completing the form. We'll be in touch soon!</p>
       </div>
-  
-      <div class="row row--three">
-        <fieldset>
-          <legend>Query Type *</legend>
-          <div class="row__radio">
-            <div class="radio three__general">
-              <label class="radio__btn">
-                <input class="enquiry" type="radio" name="enquiry" id="general">
-                General Enquiry
-              </label>
-            </div>
-            <div class="radio three__support">
-              <label class="radio__btn">
-                <input class="enquiry" type="radio" name="enquiry" id="support">
-                Support Request
-              </label>
-            </div>
+    </section>
+    <section class="card main--card">
+      <form class="form" novalidate>
+        <h3 class="title">Contact Us</h3>
+        <div class="row row--one">
+          <div class="row--first-name">
+            <label class="first" for="first-name">First Name *</label>
+             <!-- input here 👇 -->
+            <input 
+              type="text" 
+              name="fname" 
+              class="fname" 
+              id="first-name" 
+              required
+            />
+            <span class="first-name"></span>
           </div>
-        </fieldset>
-      </div>
+          <div class="row--last-name">
+            <label for="first-name">Last Name *</label>
+            <!-- input here 👇 -->
+            <input 
+              type="text" 
+              name="lname" 
+              class="lname" 
+              id="last-name" 
+              required
+            />
+            <span class="last-name"></span>
+          </div>
+        </div>
+    
+        <div class="row row--two">
+          <label for="email">Email Address *</label>
+           <!-- input here 👇 -->
+          <input type="email" name="mail" id="email" required>
+          <span class="email"></span>
+        </div>
+    
+        <div class="row row--three">
+          <fieldset>
+            <legend>Query Type *</legend>
+            <div class="row__radio">
+              <div class="radio three__general">
+                <label class="radio__btn">
+                   <!-- input here 👇 -->
+                  <input 
+                    class="enquiry" 
+                    type="radio" 
+                    value="general" 
+                    name="enquiry" 
+                    id="general" 
+                    required
+                  />
+                  General Enquiry
+                </label>
+              </div>
+              <div class="radio three__support">
+                <label class="radio__btn">
+                  <!-- input here 👇 -->
+                  <input 
+                    class="enquiry" 
+                    type="radio" 
+                    value="support" 
+                    name="enquiry" 
+                    id="support" 
+                    required
+                  />
   
-      <div class="row row--four">
-        <label for="message">Message *</label>
-        <textarea name="message" id="message"></textarea>
-      </div>
-  
-      <div class="row row--five">
-        <input type="checkbox" name="consent" id="consent">
-        <label for="consent">
-          I consent to being contacted by the team*
-        </label>
-      </div>
-  
-      <div class="row row--six">
-        <button class="submit-button" type="submit">Submit</button>
-      </div>
-    </form>
+                  Support Request
+                </label>
+              </div>
+            </div>
+            <span class="enquiry"></span>
+          </fieldset>
+        </div>
+    
+        <div class="row row--four">
+          <label for="message">Message *</label>
+           <!-- textarea here 👇 -->
+          <textarea name="message" id="message" required></textarea>
+          <span class="message"></span>
+        </div>
+    
+        <div class="row row--five">
+          <label class="row__consent" for="consent">
+             <!-- input here 👇 -->
+            <input 
+              type="checkbox" 
+              name="consent" 
+              id="consent"
+              required
+            />
+            I consent to being contacted by the team*
+          </label>
+          <span class="consent hide">ggg</span>
+        </div>
+    
+        <div class="row row--six">
+          <button class="submit-button" type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
   </main>
 
  
