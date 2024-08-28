@@ -13,8 +13,9 @@
 body {
   background-color: aliceblue;
   display: flex;
-  margin-top: 20px;
+  margin-top: 4.5rem;
   flex-direction: column;
+  /* justify-content: center; */
   align-items: center;
   max-width: 100vw;
   max-height: 100vh;
@@ -38,7 +39,7 @@ main {
 
 .main--card {
   background-color: hsl(0, 0%, 100%);
-  max-width: 70vw;
+  width: 480px;
   padding-bottom: 0;
 }
 
@@ -285,8 +286,11 @@ span {
 /***************************** responsive designs  *********************/
 
 @media (max-width: 480px) {
+  body {
+    margin-top: 10px;
+  }
   .main--card {
-    max-width: 100vw;
+    max-width: 95vw;
   }
 
   .row--one,
