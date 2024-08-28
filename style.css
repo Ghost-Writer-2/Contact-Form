@@ -41,6 +41,11 @@ main {
   padding-bottom: 0;
 }
 
+/******************* content styles ***********************/
+.title {
+  color: hsl(187, 24%, 22%);
+}
+
 form {
   width: 100%;
 }
@@ -99,7 +104,7 @@ input[type="checkbox"] {
   gap: 0.3rem;
 }
 
-/******************************* grouped styles ***********************/
+/**************************** grouped styles ***********************/
 .row--one,
 .row__radio,
 .row--five {
@@ -181,9 +186,9 @@ textarea {
   cursor: pointer;
 }
 
-/* .green-color {
-  background-color: ;
-} */
+.green-color {
+  background-color: hsl(148, 38%, 91%);
+}
 
 /***************************** invalid styles **************************/
 
@@ -233,6 +238,7 @@ span {
 }
 
 /*********************** success animation ****************************/
+/* animate in */
 @keyframes successful {
   from {
     transform: translateY(-100px);
@@ -249,3 +255,17 @@ span {
   transition: display 1s, animation 1s;
 }
 
+@keyframes end-animation {
+  from {
+    transform: translateY(-10px);
+  }
+
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+.end--animation {
+  /* animation: end-animation 1s ease 1; */
+  animation: end-animation 1s ease 3s 1;
+}

@@ -12,7 +12,7 @@
 
   const texInputs = [FIRST_NAME, LAST_NAME, EMAIL, MESSAGE];
 
-  /*********************** removes errors if valid *********************/  
+  /*********************** removes errors if valid *********************/
   texInputs.forEach((element) => {
     element.addEventListener("input", () => {
       if (element.validity.valid) {
@@ -33,7 +33,7 @@
     }
   });
 
-  /**************** removes default messages ***********************/ 
+  /**************** removes default messages ***********************/
   document.addEventListener(
     "invalid",
     (function () {
@@ -47,17 +47,21 @@
     true
   );
 
-  /******************** form validation ***********************/ 
+  /******************** form validation ***********************/
   FORM.addEventListener("submit", (e) => {
     if (!FORM.reportValidity()) {
       e.preventDefault();
     } else {
       e.preventDefault();
+      unhide();
       start();
+
+      setTimeout(end, 2000);
+      reset();
     }
   });
 
-  /***************** error ⚠️ functions ****************/
+  /***************** ⚠️⚠️⚠️ error functions ⚠️⚠️⚠️****************/
   function errorIndicator(value) {
     value.style.border = "1px solid hsl(0, 66%, 54%)";
   }
@@ -85,6 +89,7 @@
     }
   }
 
+  // checks for valid email
   function checkValidEmail() {
     if (EMAIL.validity.typeMismatch) {
       document.querySelector(`#${EMAIL.id} + span`).textContent =
@@ -93,6 +98,7 @@
     }
   }
 
+  // checks if either query is not selected
   function checkEnquiry() {
     if (ENQUIRY[0].validity.valueMissing) {
       enquiry_errorText.textContent = "Please select a query";
@@ -100,6 +106,7 @@
     }
   }
 
+  // checks if consent is clicked
   function checkConsent() {
     if (CONSENT.validity.valueMissing) {
       consent_errorText.classList.remove("hide");
@@ -119,32 +126,84 @@
     });
   }
 
-  
+/*************************** green color thingy ********************/
+  ENQUIRY.forEach((value) => {
+    value.addEventListener("input", () => {
+      const div = document.querySelector(`.three__${value.id}`);
+      const div_general = document.querySelector(".three__general");
+      const div_support = document.querySelector(".three__support");
+
+      // adds the green color if a radio button is clicked
+      if (value.checked) {
+        div.classList.add("green-color");
+      }
+
+      // checks if the green color is already applied to the previous div
+      if (
+        value === ENQUIRY[0] &&
+        div_support.classList.contains("green-color")
+      ) {
+        div_support.classList.remove("green-color");
+      } else if (
+        value === ENQUIRY[1] &&
+        div_general.classList.contains("green-color")
+      ) {
+        div_general.classList.remove("green-color");
+      }
+    });
+  });
+
+  /************************** reset everything ******************/
+
+  function reset() {
+
+    texInputs.forEach(value => {
+      value.value = '';
+    })
+
+    ENQUIRY.forEach(value => {
+      value.checked = false;
+    })
+
+    CONSENT.checked = false;
+    document.querySelector(".three__support")
+      .classList.remove('green-color');
+
+    document.querySelector(".three__general")
+      .classList.remove('green-color')
+  }
 })();
 
+
+/******************************animation section ***********************/
 var success = {
-  animation: function() {
-    const successCard = document.querySelector('.success');
+  animation: function () {
+    const successCard = document.querySelector(".success--card");
 
     return {
-      endAnimation: function() {
-        successCard.classList.remove('success')
-        successCard.classList.add('hide')
+      endAnimation: function () {
+        // successCard.classList.remove('success')
+        successCard.classList.add("end--animation");
+        setTimeout(hide, 4000);
       },
 
-      startAnimation: function() {
-        successCard.classList.add('success')
-        successCard.classList.remove('hide')
-      }
-    }
-  }
-}
+      startAnimation: function () {
+        successCard.classList.add("success");
+      },
+
+      hideAnimation: function () {
+        successCard.classList.add("hide");
+      },
+
+      unhideAnimation: function () {
+        successCard.classList.remove("hide");
+      },
+    };
+  },
+};
 
 var end = success.animation().endAnimation;
-var start = success.animation().startAnimation
-
-end();
-// start();
-
-// end();
-// start()
+var start = success.animation().startAnimation;
+var hide = success.animation().hideAnimation;
+var unhide = success.animation().unhideAnimation;
+hide();
