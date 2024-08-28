@@ -7,6 +7,7 @@
   const EMAIL = document.getElementById("email");
   const MESSAGE = document.getElementById("message");
   const CONSENT = document.getElementById("consent");
+  const SUBMIT_BTN = document.querySelector('.submit-button')
   const enquiry_errorText = document.querySelector("span.enquiry");
   const consent_errorText = document.querySelector("span.consent");
 
@@ -47,16 +48,23 @@
     true
   );
 
+  function scrollTo_top() {
+      globalThis.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  }
+
+
   /******************** form validation ***********************/
   FORM.addEventListener("submit", (e) => {
     if (!FORM.reportValidity()) {
       e.preventDefault();
     } else {
       e.preventDefault();
+      scrollTo_top();
       unhide();
       start();
 
-      setTimeout(end, 2000);
+      setTimeout(end, 3000);
+      setTimeout(hide, 5000);
       reset();
     }
   });
@@ -126,6 +134,10 @@
     });
   }
 
+  function scrollTo() {
+    
+  }
+
 /*************************** green color thingy ********************/
   ENQUIRY.forEach((value) => {
     value.addEventListener("input", () => {
@@ -182,17 +194,23 @@ var success = {
 
     return {
       endAnimation: function () {
-        // successCard.classList.remove('success')
         successCard.classList.add("end--animation");
-        setTimeout(hide, 4000);
+        console.log('animation ends');
+        
       },
 
       startAnimation: function () {
         successCard.classList.add("success");
+        console.log('animation starts');
+        
       },
 
       hideAnimation: function () {
+        successCard.classList.remove("end--animation");
+        successCard.classList.remove('success');
         successCard.classList.add("hide");
+        console.log('hide animation');
+        
       },
 
       unhideAnimation: function () {
