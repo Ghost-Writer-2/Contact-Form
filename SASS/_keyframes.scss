@@ -1,0 +1,32 @@
+/*********************** success animation ****************************/
+/* animate in */
+@keyframes successful {
+  from {
+    transform: translateY(-100px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.success {
+  transform: translateY(0);
+  animation: successful 1s ease 1;
+  /* transition: display 1s, animation 1s; */
+}
+
+@keyframes end-animation {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-200px);
+  }
+}
+
+.end--animation {
+  /* animation: end-animation 1s ease 1; */
+  animation: end-animation 1s ease 1s 1;
+}

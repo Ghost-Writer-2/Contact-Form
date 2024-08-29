@@ -1,0 +1,33 @@
+$radius: 6px;
+
+$primary: (
+  "light-green": hsl(148, 38%, 91%),
+  "green": hsl(169, 82%, 27%),
+  "red": hsl(0, 66%, 54%)
+);
+
+$neutral: (
+  "white": hsl(0, 0%, 100%),
+  "light-grey": hsl(186, 15%, 59%),
+  "grey": hsl(187, 24%, 22%)
+);
+
+@function color($type, $color) {
+  @return map-get($type, $color)
+};
+
+@mixin flexCenter($direction: row, $align: none, $justify: none) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+};
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}

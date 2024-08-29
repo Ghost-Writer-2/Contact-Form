@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <!-- <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"> -->
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="styles/main.css">
   
   <title>Frontend Mentor | Contact form</title>
 
@@ -13,20 +14,20 @@
 </head>
 <body>
   <main>
-    <section class="card success--card">
-      <div class="success--indicator">
-        <img class="success__check" src="assets/images/icon-success-check.svg" alt="success_check">
-        <p class="indicator__msg">Message Sent!</p>
+    <section class="card card--success">
+      <div class="card--success__indicator">
+        <img class="card--success__check" src="assets/images/icon-success-check.svg" alt="success_check">
+        <p class="card--success__msg">Message Sent!</p>
       </div>
-      <div class="sucess--msg">
-        <p class="success__msg">Thanks for completing the form. We'll be in touch soon!</p>
+      <div class="card--success__msg-container">
+        <p class="card--success__msg-container__msg">Thanks for completing the form. We'll be in touch soon!</p>
       </div>
     </section>
-    <section class="card main--card">
+    <section class="card card--main">
       <form class="form" novalidate>
-        <h3 class="title">Contact Us</h3>
+        <h3 class="form__title">Contact Us</h3>
         <div class="row row--one">
-          <div class="row--first-name">
+          <div class="row--one__first-name">
             <label class="first" for="first-name">First Name *</label>
              <!-- input here 👇 -->
             <input 
@@ -38,7 +39,7 @@
             />
             <span class="first-name"></span>
           </div>
-          <div class="row--last-name">
+          <div class="row--one__last-name">
             <label for="first-name">Last Name *</label>
             <!-- input here 👇 -->
             <input 
@@ -62,7 +63,7 @@
         <div class="row row--three">
           <fieldset>
             <legend>Query Type *</legend>
-            <div class="row__radio">
+            <div class="row--three__radio">
               <div class="radio three__general">
                 <label class="radio__btn">
                    <!-- input here 👇 -->
@@ -105,7 +106,7 @@
         </div>
     
         <div class="row row--five">
-          <label class="row__consent" for="consent">
+          <label class="row--five__consent row__consent" for="consent">
              <!-- input here 👇 -->
             <input 
               type="checkbox" 
@@ -119,7 +120,7 @@
         </div>
     
         <div class="row row--six">
-          <button class="submit-button" type="submit">Submit</button>
+          <button class="row--six__submit-button" type="submit">Submit</button>
         </div>
       </form>
     </section>

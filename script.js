@@ -190,7 +190,7 @@
 /******************************animation section ***********************/
 var success = {
   animation: function () {
-    const successCard = document.querySelector(".success--card");
+    const successCard = document.querySelector(".card--success");
 
     return {
       endAnimation: function () {

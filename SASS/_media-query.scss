@@ -1,0 +1,63 @@
+  // @media (max-width: 485px) {
+  //   body {
+  //     justify-content: none;
+  //   }
+
+  //   .card--main {
+  //     max-width: 94vw;
+  //   }
+  
+  //   .row--one,
+  //   .row--three__radio {
+  //     flex-direction: column;
+  //   }
+  
+  //   textarea {
+  //     resize: none;
+  //     height: 200px;
+  //   }
+  
+  //   input {
+  //     padding: 0.8rem;
+  //   }
+  
+  //   .attribution {
+  //     font-size: 0.8rem;
+  //     text-align: center;
+  //     position: relative;
+  //     top: 5%;
+  //   }
+  // }
+
+  @mixin responsive {
+    @media (max-width: 485px) {
+      body {
+        justify-content: none;
+      }
+  
+      .card--main {
+        max-width: 94vw;
+      }
+    
+      .row--one,
+      .row--three__radio {
+        flex-direction: column;
+      }
+    
+      textarea {
+        resize: none;
+        height: 200px;
+      }
+    
+      input {
+        padding: 0.8rem;
+      }
+    
+      .attribution {
+        font-size: 0.8rem;
+        text-align: center;
+        position: relative;
+        top: 5%;
+      }
+    }
+  }

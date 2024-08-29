@@ -170,9 +170,9 @@ textarea {
   margin-bottom: 0.2rem;
 }
 
-.radi.clicked {
+/* .radi.clicked {
   background-color: hsl(148, 38%, 91%);
-}
+} */
 
 .radio {
   font-size: 0.9rem;
@@ -285,11 +285,8 @@ span {
 /***************************** responsive designs  *********************/
 
 @media (max-width: 480px) {
-  body {
-    margin-top: 10px;
-  }
   .main--card {
-    max-width: 95vw;
+    max-width: 94vw;
   }
 
   .row--one,
