@@ -7,9 +7,9 @@
   const EMAIL = document.getElementById("email");
   const MESSAGE = document.getElementById("message");
   const CONSENT = document.getElementById("consent");
-  const SUBMIT_BTN = document.querySelector('.submit-button')
   const enquiry_errorText = document.querySelector("span.enquiry");
   const consent_errorText = document.querySelector("span.consent");
+  
 
   const texInputs = [FIRST_NAME, LAST_NAME, EMAIL, MESSAGE];
 
@@ -110,7 +110,6 @@
   function checkEnquiry() {
     if (ENQUIRY[0].validity.valueMissing) {
       enquiry_errorText.textContent = "Please select a query";
-      console.log("valueMissing");
     }
   }
 
@@ -195,21 +194,16 @@ var success = {
     return {
       endAnimation: function () {
         successCard.classList.add("end--animation");
-        console.log('animation ends');
-        
       },
 
       startAnimation: function () {
         successCard.classList.add("success");
-        console.log('animation starts');
-        
       },
 
       hideAnimation: function () {
         successCard.classList.remove("end--animation");
         successCard.classList.remove('success');
         successCard.classList.add("hide");
-        console.log('hide animation');
         
       },
 
